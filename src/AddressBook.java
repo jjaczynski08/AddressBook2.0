@@ -29,6 +29,10 @@ public class AddressBook
     public ArrayList<Contact> alphabeticalOrder()
     {
         ArrayList<Contact> res = new ArrayList<Contact>(allContacts);
+        if (Main.verbose)
+        {
+            System.out.println("[verbose] Starting sort...");
+        }
 
         for (int i = 0; i < res.size(); i++)
         {
@@ -44,6 +48,10 @@ public class AddressBook
                 }
             }
         }
+        if (Main.verbose)
+        {
+            System.out.println("[verbose] Finished sort.");
+        }
         return res;
     }
 
@@ -52,9 +60,13 @@ public class AddressBook
      * @param name
      * @return allNames - ArrayList of matching names
      */
-    public ArrayList<String> searchName(String name)
+    public ArrayList<String> searchName(String name) throws ContactNotFoundException
     {
         ArrayList<String> allNames = new ArrayList<String>();
+        if (Main.verbose)
+        {
+            System.out.println("[verbose] Searching for name...");
+        }
         for (int i = 0; i < allContacts.size(); i++)
         {
             Contact curr = allContacts.get(i);
@@ -62,6 +74,14 @@ public class AddressBook
             {
                 allNames.add(curr.toString());
             }
+        }
+        if (Main.verbose)
+        {
+            System.out.println("[verbose] Found " + allNames.size() + " contact(s).");
+        }
+        if (allNames.size() == 0)
+        {
+            throw new ContactNotFoundException(name);
         }
         return allNames;
     }
@@ -76,6 +96,10 @@ public class AddressBook
     public int nbOfContacts(String name, String phone, String email)
     {
         int num = 0;
+        if (Main.verbose)
+        {
+            System.out.println("[verbose] Finding matching contacts...");
+        }
         for (int i = 0; i < allContacts.size(); i++)
         {
             Contact curr = allContacts.get(i);
@@ -83,6 +107,10 @@ public class AddressBook
             {
                 num++;
             }
+        }
+        if (Main.verbose)
+        {
+            System.out.println("[verbose] Found " + num + " contact(s).");
         }
         return num;
     }
@@ -96,13 +124,25 @@ public class AddressBook
      */
     public Contact getContact(String name, String phone, String email)
     {
+        if (Main.verbose)
+        {
+            System.out.println("[verbose] Finding matching contacts...");
+        }
         for (int i = 0; i < allContacts.size(); i++)
         {
             Contact curr = allContacts.get(i);
             if (curr.getName().equals(name) && curr.getPhone().equals(phone) && curr.getEmail().equals(email))
             {
+                if (Main.verbose)
+                {
+                    System.out.println("[verbose] Found contact.");
+                }
                 return curr;
             }
+        }
+        if (Main.verbose)
+        {
+            System.out.println("[verbose] Found 0 matches.");
         }
         return null;
     }
@@ -124,6 +164,10 @@ public class AddressBook
             if (curr.getName().equals(name) && curr.getPhone().equals(phone) && curr.getEmail().equals(email) && !first)
             {
                 first = true;
+                if (Main.verbose)
+                {
+                    System.out.println("[verbose] Found first contact match.");
+                }
             }
             else if (curr.getName().equals(name) && curr.getPhone().equals(phone) && curr.getEmail().equals(email))
             {
@@ -131,6 +175,10 @@ public class AddressBook
                 allContacts.remove(i);
                 i--;
             }
+        }
+        if (Main.verbose)
+        {
+            System.out.println("[verbose] Merged " + counter + " contact(s).");
         }
         return counter;
     }
@@ -145,6 +193,10 @@ public class AddressBook
     public int deleteContact(String name, String phone, String email) // DONE
     {
         int count = 0;
+        if (Main.verbose)
+        {
+            System.out.println("[verbose] Finding matching contacts...");
+        }
         for (int i = 0; i < allContacts.size(); i++)
         {
             Contact curr = allContacts.get(i);
@@ -155,6 +207,40 @@ public class AddressBook
                 count++;
             }
         }
+        if (Main.verbose)
+        {
+            System.out.println("[verbose] Deleted " + count + " contact(s).");
+        }
         return count;
+    }
+
+    /**
+     *
+     * @param parsedFile
+     */
+    public void fileRead(String[] parsedFile)
+    {
+        if (parsedFile.length > 3) // checking that it exists so it doesn't crash
+        {
+            allContacts.add(new Contact(parsedFile[0], parsedFile[1], parsedFile[3]));
+        }
+        Contact curr = allContacts.get(allContacts.size()-1);
+        curr.setPhone2(parsedFile[2]);
+        if (parsedFile.length > 4)
+        {
+            curr.setEmail2(parsedFile[4]);
+        }
+        if (parsedFile.length > 5)
+        {
+            curr.setAddress(parsedFile[5]);
+        }
+        if (parsedFile.length > 6)
+        {
+            curr.setBday(parsedFile[6]);
+        }
+        if (parsedFile.length > 7)
+        {
+            curr.setSocial(parsedFile[7]);
+        }
     }
 }

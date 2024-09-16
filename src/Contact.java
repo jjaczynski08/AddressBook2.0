@@ -1,7 +1,12 @@
 public class Contact {
     private String name;
     private String phone;
+    private String phone2;
     private String email;
+    private String email2;
+    private String address;
+    private String bday;
+    private String social;
 
     /**
      * Contact Constructor
@@ -40,11 +45,27 @@ public class Contact {
     }
 
     /**
+     * Gets Contact's phone 2nd number
+     * @return phone - 2nd phone number of Contact
+     */
+    public String getPhone2() {
+        return phone2;
+    }
+
+    /**
      * Sets new phone number
      * @param phone - new phone number of Contact
      */
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    /**
+     * Sets new 2nd phone number
+     * @param phone2 - new 2nd phone number of Contact
+     */
+    public void setPhone2(String phone2) {
+        this.phone2 = phone2;
     }
 
     /**
@@ -56,6 +77,14 @@ public class Contact {
     }
 
     /**
+     * Gets Contact's 2nd email
+     * @return email - 2nd email of Contact
+     */
+    public String getEmail2() {
+        return email2;
+    }
+
+    /**
      * Sets new email
      * @param email - new email of Contact
      */
@@ -64,11 +93,68 @@ public class Contact {
     }
 
     /**
+     * Sets new 2nd email
+     * @param email2 - new 2nd email of Contact
+     */
+    public void setEmail2(String email2) {
+        this.email2 = email2;
+    }
+
+    /**
+     * Gets Contact's mailing address
+     * @return address - mailing address of Contact
+     */
+    public String getAddress() {
+        return address;
+    }
+
+    /**
+     * Sets new mailing address
+     * @param address - new mailing address of Contact
+     */
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    /**
+     * Gets Contact's birthdau
+     * @return bday - birthday of Contact
+     */
+    public String getBday() {
+        return bday;
+    }
+
+    /**
+     * Sets new birthday
+     * @param bday - new birthday of Contact
+     */
+    public void setBday(String bday) {
+        this.bday = bday;
+    }
+
+    /**
+     * Gets Contact's social media profile
+     * @return social - social media profile of Contact
+     */
+    public String getSocial() {
+        return social;
+    }
+
+    /**
+     * Sets new social media profile
+     * @param social - new social media profile of Contact
+     */
+    public void setSocial(String social) {
+        this.social = social;
+    }
+
+    /**
      * All contact information
      * @return "Jessica Jaczynski, 1800, jj@gmail.com"
      */
     @Override
     public String toString() {
-        return name + ", " + phone + ", " + email;
+        return name + "," + phone + "," + phone2 + "," + email + "," + email2 + "," + address + "," +
+                bday + "," + social;
     }
 }

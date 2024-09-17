@@ -1,0 +1,10 @@
+Alex Lee,(555) 432-1098,(555) 555-6789,alexlee@provider.net,,789 Oak Ave Smallville TX 77777,03/03/1970,@alexlee_tx
+Ava Walker,(555) 765-4321,,avawalker@aol.com,,567 Elm St One More Town NJ 07001,10/10/1905,@ava_walker_nj
+Ella Taylor,(555) 345-6789,,ellataylor@icloud.com,,101 Willow St Another Place GA 30001,08/08/1925,@ellataylorga
+Emily Davis,(555) 098-7654,,emilydavis@gmail.com,,101 Pine St Somewhere FL 33333,04/04/1965,@emilydavisfl
+Jane Smith,(555) 987-6543,,janesmith@mail.com,janesmith@work.com,456 Elm St Big City NY 11111,02/02/1985,@janesmith_ny
+John Doe,(555) 123-4567,(555) 789-0123,johndoe@example.com,johndoe2@email.com,123 Main St Anytown CA 90001,01/01/1990,@johndoe
+Liam Thomas,(555) 901-2345,,liamthomas@msn.com,,234 Sycamore Ave Yet Another City MI 48001,09/09/1910,@liamthomasmi
+Michael Johnson,(555) 678-9012,(555) 555-3210,michaeljohnson@company.com,,234 Cedar Rd Anywhere IL 60606,05/05/1950,@mjohnson_il
+Noah Carter,(555) 876-5432,,noahcarter@yahoo.com,,789 Birch Ln Somewhere Else CO 80001,07/07/1930,@noahcarterco
+Olivia Brown,(555) 234-5678,,oliviabrown@outlook.com,,567 Maple Dr Othertown WA 98001,06/06/1945,@olivia_brownwa
